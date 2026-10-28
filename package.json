@@ -1,0 +1,51 @@
+{
+  "name": "bb-plugin-rad-binder",
+  "version": "0.1.0",
+  "description": "An 80s/90s school-binder and toy-commercial theme for bb: neon confetti, striped binder edges, chunky offset shadows and italic display headings.",
+  "keywords": ["bb", "bb-plugin", "theme", "retro", "80s", "90s", "neon", "memphis"],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "bb": ">=0.43",
+    "bbPluginSdk": ">=0.4.87"
+  },
+  "bb": {
+    "name": "Rad Binder",
+    "description": "An 80s/90s school-binder look: a deep-purple binder-spine sidebar with neon confetti, striped binder edges, chunky offset shadows on the composer, messages and cards, and bold italic display headings. Light and dark.",
+    "branding": {
+      "icon": "./assets/icon.svg"
+    },
+    "server": "./server.ts",
+    "themes": [
+      {
+        "id": "rad-binder",
+        "name": "Rad Binder",
+        "description": "Neon confetti on deep purple, striped binder edges, hard offset shadows and toy-ad italic headings. Light and dark.",
+        "css": "./theme.css",
+        "codeTheme": {
+          "dark": "synthwave-84",
+          "light": "catppuccin-latte"
+        }
+      }
+    ],
+    "skills": []
+  },
+  "files": [
+    "dist/server.js",
+    "dist/server.meta.json",
+    "theme.css",
+    "assets/",
+    "README.md",
+    "PLUGIN_OVERVIEW.md",
+    "server.ts"
+  ],
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.75",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "scripts": {
+    "build": "bb plugin build",
+    "typecheck": "tsc"
+  }
+}

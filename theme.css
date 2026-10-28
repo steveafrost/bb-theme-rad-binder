@@ -1,0 +1,290 @@
+/* Rad Binder — an 80s/90s school-binder cover and toy-commercial look for bb.
+   Neon confetti on deep purple (dark) or a laser-lilac binder cover (light),
+   chunky offset shadows, a striped binder edge, and chrome-italic headings.
+   Original patterns and colours; no brand marks. System fonts only, no network. */
+
+:root,
+.light {
+  /* Binder-cover lilac with deep-purple ink */
+  --canvas: #fbf4ff;
+  --ink: #1b0f3b;
+  --primary: #d4137a;              /* hot pink, darkened to hold 4.5:1 with white */
+  --primary-foreground: #ffffff;
+  --file-accent: #00807a;          /* teal */
+
+  --muted-foreground: color-mix(in oklch, var(--ink) 72%, var(--canvas));
+  --subtle-foreground: color-mix(in oklch, var(--ink) 58%, var(--canvas));
+  --readback-foreground: color-mix(in oklch, var(--ink) 64%, var(--canvas));
+
+  --destructive: #e0242f;
+  --destructive-foreground: #ffffff;
+  --destructive-text: #b3121c;
+  --warning: #f2b800;
+  --warning-text: #8a5a00;
+  --attention: #ff7a00;
+  --success: #138a3e;
+  --diff-added: #138a3e;
+  --diff-removed: #d61f4a;
+  --pr-merged: #7a2cff;
+
+  /* Era palette used by the decorative rules below */
+  --rb-pink: #ff2e93;
+  --rb-teal: #00e5d4;
+  --rb-yellow: #ffe14d;
+  --rb-purple: #8a3cff;
+  --rb-blue: #2f6bff;
+  --rb-edge: #1b0f3b;              /* chunky outline on stickers and cards */
+  --rb-shadow: #ff2e93;            /* hard offset shadow */
+  --rb-shadow-alt: #00c2b4;        /* second offset shadow (user bubble, buttons) */
+  --rb-sticker: #ffffff;           /* user bubble plate */
+  --rb-heading-shadow: #00d1c1;
+  --rb-pattern-opacity: 0.34;
+
+  --radius: 0.6rem;
+
+  /* Type: geometric display sans, the toy-ad staple */
+  --font-sans: "Avenir Next", "Futura", "Century Gothic", system-ui, sans-serif;
+  --rb-display: "Futura", "Avenir Next Condensed", "Avenir Next", "Arial Black", sans-serif;
+  --font-mono: "SF Mono", Menlo, Monaco, monospace;
+  --font-terminal: "SF Mono", Menlo, Monaco, monospace;
+
+  /* Terminal: neon-arcade ANSI */
+  --ansi-0: #1b0f3b;  --ansi-bg-fg-0: #ffffff;
+  --ansi-1: #e0242f;  --ansi-bg-fg-1: #ffffff;
+  --ansi-2: #138a3e;  --ansi-bg-fg-2: #ffffff;
+  --ansi-3: #b07d00;  --ansi-bg-fg-3: #ffffff;
+  --ansi-4: #2f5bdb;  --ansi-bg-fg-4: #ffffff;
+  --ansi-5: #d4137a;  --ansi-bg-fg-5: #ffffff;
+  --ansi-6: #00807a;  --ansi-bg-fg-6: #ffffff;
+  --ansi-7: #6b5f86;  --ansi-bg-fg-7: #ffffff;
+  --ansi-8: #4a3d6b;  --ansi-bg-fg-8: #ffffff;
+  --ansi-9: #ff2e5f;  --ansi-bg-fg-9: #1b0f3b;
+  --ansi-10: #1fb35a; --ansi-bg-fg-10: #1b0f3b;
+  --ansi-11: #e0a800; --ansi-bg-fg-11: #1b0f3b;
+  --ansi-12: #2f6bff; --ansi-bg-fg-12: #ffffff;
+  --ansi-13: #ff2e93; --ansi-bg-fg-13: #1b0f3b;
+  --ansi-14: #00b8ab; --ansi-bg-fg-14: #1b0f3b;
+  --ansi-15: #1b0f3b; --ansi-bg-fg-15: #ffffff;
+}
+
+.dark {
+  /* After-school-TV night: deep purple, neon on top */
+  --canvas: #1b0f3b;
+  --ink: #fff6e8;
+  --primary: #ff2e93;
+  --primary-foreground: #120a24;
+  --file-accent: #00e5d4;
+
+  --destructive: #ff4d5e;
+  --destructive-foreground: #120a24;
+  --destructive-text: #ff8a96;
+  --warning: #ffe14d;
+  --warning-text: #ffe14d;
+  --attention: #ffa53a;
+  --success: #3cff9a;
+  --diff-added: #3cff9a;
+  --diff-removed: #ff5c8a;
+  --pr-merged: #b47bff;
+
+  --rb-edge: #00e5d4;
+  --rb-shadow: #ff2e93;
+  --rb-shadow-alt: #00e5d4;
+  --rb-sticker: #120a24;
+  --rb-heading-shadow: #ff2e93;
+  --rb-pattern-opacity: 0.22;
+
+  --ansi-0: #120a24;  --ansi-bg-fg-0: #fff6e8;
+  --ansi-1: #ff4d5e;  --ansi-bg-fg-1: #120a24;
+  --ansi-2: #3cff9a;  --ansi-bg-fg-2: #120a24;
+  --ansi-3: #ffe14d;  --ansi-bg-fg-3: #120a24;
+  --ansi-4: #5b8cff;  --ansi-bg-fg-4: #120a24;
+  --ansi-5: #ff2e93;  --ansi-bg-fg-5: #120a24;
+  --ansi-6: #00e5d4;  --ansi-bg-fg-6: #120a24;
+  --ansi-7: #d9cff0;  --ansi-bg-fg-7: #120a24;
+  --ansi-8: #6b5a9c;  --ansi-bg-fg-8: #fff6e8;
+  --ansi-9: #ff7a88;  --ansi-bg-fg-9: #120a24;
+  --ansi-10: #8affc1; --ansi-bg-fg-10: #120a24;
+  --ansi-11: #fff08a; --ansi-bg-fg-11: #120a24;
+  --ansi-12: #8fb0ff; --ansi-bg-fg-12: #120a24;
+  --ansi-13: #ff7ab8; --ansi-bg-fg-13: #120a24;
+  --ansi-14: #6ff5ea; --ansi-bg-fg-14: #120a24;
+  --ansi-15: #fff6e8; --ansi-bg-fg-15: #120a24;
+}
+
+/* ---------- Decoration (kept off reading surfaces) ---------- */
+
+/* The sidebar is the binder spine: deep purple in both modes, with neon confetti.
+   Tokens are re-declared here because derived values resolve at :root. */
+[data-sidebar="sidebar"] {
+  position: relative;
+  isolation: isolate;
+  --canvas: #160b33;
+  --ink: #fff6e8;
+  --background: #160b33;
+  --foreground: #fff6e8;
+  --sidebar: #160b33;
+  --sidebar-foreground: #fff6e8;
+  --sidebar-accent: rgb(255 246 232 / 0.09);
+  --sidebar-accent-foreground: #fff6e8;
+  --sidebar-border: rgb(255 246 232 / 0.14);
+  --border: rgb(255 246 232 / 0.14);
+  --border-seam: rgb(255 246 232 / 0.1);
+  --muted: rgb(255 246 232 / 0.11);
+  --secondary: rgb(255 246 232 / 0.08);
+  --accent: rgb(255 246 232 / 0.08);
+  --state-hover: rgb(255 246 232 / 0.08);
+  --state-active: rgb(255 246 232 / 0.13);
+  --muted-foreground: #d2c7ec;
+  --subtle-foreground: #a99bd0;
+  --readback-foreground: #bcafdc;
+  --primary: #ff2e93;
+  --primary-foreground: #120a24;
+  --rb-pattern-opacity: 0.3;
+  background-color: #160b33;
+  color: #fff6e8;
+}
+
+/* Selected thread: a hot-pink sticker. */
+[data-sidebar="sidebar"] .bb-sidebar-selected-row {
+  background: var(--rb-pink) !important;
+  box-shadow: 3px 3px 0 var(--rb-teal);
+}
+[data-sidebar="sidebar"] .bb-sidebar-selected-row,
+[data-sidebar="sidebar"] .bb-sidebar-selected-row :is(span, a, button, svg) {
+  color: #120a24 !important;
+  font-weight: 600;
+}
+[data-sidebar="sidebar"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--rb-pattern-opacity);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='260'%3E%3Cpath d='M14 40 q18-26 36 0 t36 0 t36 0' fill='none' stroke='%2300e5d4' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M150 120 l26-46 l26 46z' fill='none' stroke='%23ff2e93' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M40 170 l14 -14 m0 14 l-14 -14' stroke='%23ffe14d' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='200' cy='210' r='9' fill='%238a3cff'/%3E%3Ccircle cx='110' cy='70' r='5' fill='%23ffe14d'/%3E%3Cpath d='M90 230 q14-20 28 0 t28 0' fill='none' stroke='%23ff2e93' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='20' y='96' width='20' height='20' fill='none' stroke='%232f6bff' stroke-width='5' transform='rotate(18 30 106)'/%3E%3C/svg%3E")
+      0 0 / 240px 260px;
+}
+
+/* Striped binder edge across the top of the window. */
+[data-testid="app-layout-root"]::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  z-index: 60;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--rb-pink) 0 28px,
+    var(--rb-yellow) 28px 56px,
+    var(--rb-teal) 56px 84px,
+    var(--rb-purple) 84px 112px
+  );
+}
+
+/* A faint laser-grid horizon behind the conversation, fading out before the text. */
+[data-thread-window] {
+  background:
+    linear-gradient(to bottom, var(--canvas) 55%, transparent),
+    repeating-linear-gradient(90deg, color-mix(in oklch, var(--rb-pink) 14%, transparent) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, color-mix(in oklch, var(--rb-pink) 14%, transparent) 0 1px, transparent 1px 48px),
+    var(--canvas);
+}
+
+/* ---------- Chunky toy-box controls ---------- */
+
+/* Composer: a sticker with a hard offset shadow. */
+[data-composer-box] [data-promptbox] {
+  border: 2px solid var(--rb-edge) !important;
+  box-shadow: 6px 6px 0 var(--rb-shadow) !important;
+}
+[data-composer-box] [data-promptbox]:focus-within {
+  border-color: var(--rb-yellow) !important;
+}
+
+/* Send button: a round arcade button. */
+[data-promptbox-submit-action] {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border: 2px solid var(--rb-edge) !important;
+  box-shadow: 2px 2px 0 var(--rb-shadow-alt);
+}
+[data-promptbox-submit-action]:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* User messages: a tilted-shadow sticker plate. */
+[data-message-column] .ml-auto .rounded-xl.bg-surface-recessed {
+  background: var(--rb-sticker);
+  border: 2px solid var(--rb-edge);
+  box-shadow: 5px 5px 0 var(--rb-shadow-alt);
+}
+
+/* Inline UI cards: binder covers with a striped top edge and a hard shadow. */
+[class*="group/genui"] section.rounded-xl.border {
+  border: 2px solid var(--rb-edge);
+  box-shadow: 6px 6px 0 var(--rb-shadow);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--rb-pink) 0 28px,
+    var(--rb-yellow) 28px 56px,
+    var(--rb-teal) 56px 84px,
+    var(--rb-purple) 84px 112px
+  );
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-top: 1.35rem;
+}
+
+/* Section labels in the sidebar read like binder tabs. */
+[data-sidebar="group-label"] {
+  font-family: var(--rb-display);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---------- Typography in replies ---------- */
+
+[data-markdown-preview] :is(h1, h2, h3),
+[class*="group/genui"] section > div > h3 {
+  font-family: var(--rb-display);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 0 var(--rb-heading-shadow);
+}
+[data-markdown-preview] a {
+  text-decoration-color: var(--rb-teal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+[data-markdown-preview] :not(pre) > code {
+  border: 1px solid color-mix(in oklch, var(--rb-teal) 45%, transparent);
+}
+[data-markdown-preview] blockquote {
+  border-left: 4px solid var(--rb-yellow);
+}
+
+::selection {
+  background: var(--rb-yellow);
+  color: #1b0f3b;
+}
+
+/* Scrollbars: striped binder tape. */
+* {
+  scrollbar-color: color-mix(in oklch, var(--rb-pink) 70%, var(--canvas)) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-promptbox-submit-action]:active {
+    transform: none;
+  }
+}
