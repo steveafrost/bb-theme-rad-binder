@@ -149,10 +149,44 @@
   background: var(--rb-pink) !important;
   box-shadow: 3px 3px 0 var(--rb-teal);
 }
+/* The sticker ink covers the row's own title, icons and controls. Thread-row
+   metadata (bb 0.50+, e.g. the pull request badge) carries status colours, so
+   it is left out here and plated below. */
 [data-sidebar="sidebar"] .bb-sidebar-selected-row,
-[data-sidebar="sidebar"] .bb-sidebar-selected-row :is(span, a, button, svg) {
+[data-sidebar="sidebar"]
+  .bb-sidebar-selected-row
+  :is(span, a, button, svg):not(
+    [data-thread-row-metadata],
+    [data-thread-row-metadata] *
+  ) {
   color: #120a24 !important;
   font-weight: 600;
+}
+
+/* Row metadata sits on the deep-purple spine in both modes, so its status
+   tokens use the night palette (the light-mode ones are tuned for lilac). */
+[data-sidebar="sidebar"] [data-thread-row-metadata] {
+  --success: #3cff9a;
+  --success-foreground: #3cff9a;
+  --destructive: #ff4d5e;
+  --destructive-text: #ff8a96;
+  --warning: #ffe14d;
+  --warning-text: #ffe14d;
+  --attention: #ffa53a;
+  --pr-merged: #b47bff;
+}
+
+/* On the pink sticker the metadata gets a dark label plate, so those colours
+   read exactly as they do on an unselected row. */
+[data-sidebar="sidebar"]
+  .bb-sidebar-selected-row
+  [data-thread-row-metadata][data-has-items] {
+  flex: 0 1 auto;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: #160b33;
+  color: #d2c7ec;
+  font-weight: 500;
 }
 [data-sidebar="sidebar"]::before {
   content: "";

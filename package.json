@@ -46,6 +46,7 @@
   },
   "scripts": {
     "build": "bb plugin build",
+    "test": "node --test \"test/*.test.mjs\"",
     "typecheck": "tsc"
   }
 }
