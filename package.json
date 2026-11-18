@@ -1,6 +1,6 @@
 {
   "name": "bb-plugin-rad-binder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An 80s/90s school-binder and toy-commercial theme for bb: neon confetti, striped binder edges, chunky offset shadows and italic display headings.",
   "keywords": ["bb", "bb-plugin", "theme", "retro", "80s", "90s", "neon", "memphis"],
   "license": "MIT",
